@@ -11,13 +11,6 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * @author 谢正龙
- * @date 2018年3月20日 上午11:22:05
- * @desc
- * @version V1.0
- * 
- */
 public class BeanUtils extends org.apache.commons.beanutils.BeanUtils {
 
 	public static final Map<String, Object> toMap(Object bean)
