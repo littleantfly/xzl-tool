@@ -13,7 +13,7 @@ import java.util.Map;
  * @version V1.0
  * 
  */
-public class ReqPageForm<T extends Object> extends BaseReqForm implements Serializable {
+public class ReqPageForm<T> extends BaseReqForm implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int currPage = 0;
