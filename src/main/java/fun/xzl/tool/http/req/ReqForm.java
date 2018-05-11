@@ -3,7 +3,6 @@ package fun.xzl.tool.http.req;
 import fun.xzl.tool.bean.BeanUtils;
 import fun.xzl.tool.map.MapUtils;
 
-import java.io.Serializable;
 import java.util.Map;
 
 /**
@@ -13,8 +12,7 @@ import java.util.Map;
  * @version V1.0
  * 
  */
-public class ReqForm<T> extends BaseReqForm implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class ReqForm<T> extends BaseReqForm  {
 
 	private T data;
 
