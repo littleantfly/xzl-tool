@@ -10,7 +10,7 @@ package fun.xzl.tool.http.req;
 public class ReqPageForm<T> extends ReqForm<T> {
 
 	private int currPage = 0;
-	private int pageSize = 10;
+	private int pageSize = Integer.MAX_VALUE;
 
 	public int getCurrPage() {
 		return currPage;
