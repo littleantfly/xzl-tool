@@ -1,11 +1,13 @@
 package fun.xzl.tool.http.resp;
 
+import java.io.Serializable;
+
 /**
  * HTTP请求返回内容的实体
  * @author jim
  *
  */
-public class RespForm {
+public class RespForm implements Serializable {
 
 	private String status;
 	private Object data;
