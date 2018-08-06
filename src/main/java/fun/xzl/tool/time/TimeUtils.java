@@ -1,11 +1,11 @@
 package fun.xzl.tool.time;
 
-import java.util.Date;
-
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+
+import java.util.Date;
 
 /**
  * 日期处理
@@ -61,6 +61,10 @@ public class TimeUtils {
 
 	public static final Date addMinutes(Date date, int duration) {
 		return TimeUtils.getDateTimeFromDate(date).plusMinutes(duration).toDate();
+	}
+
+	public static final Date addSeconds(Date date, int duration) {
+		return TimeUtils.getDateTimeFromDate(date).plusSeconds(duration).toDate();
 	}
 
 	/**
