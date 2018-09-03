@@ -15,6 +15,10 @@ public enum RespStatus {
 	TOKEN_EXPIRED("503", "登录过期"),
 	AUTH_ERROR("504", "权限不够"),
 	LOGIN_ERROR("505", "登录失败"),
+	LOGIN_USERNAME_NOT_FOUND("515", "登录用户名不存在"),
+	LOGIN_PLATFORM_NOT_SUPPORT("525", "登录用户平台不支持"),
+	LOGIN_OPENID_NOT_FOUND("535", "该帐号未绑定平台帐户"),
+	LOGIN_PWD_ERROR("545", "登录密码错误"),
 	//业务处理异常
 	SERVER_ERROR("506", "业务处理失败"),
 	STATION_NOT_FOUND("507", "站点不存在")
