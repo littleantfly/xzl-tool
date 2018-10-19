@@ -32,8 +32,10 @@ public class ExcelUtils {
         Row headerRow = sh.createRow(rownum++);
         cellnum = 0;
         for(ExcelHeader header: headers) {
-            Cell cell = headerRow.createCell(cellnum++);
+
+            Cell cell = headerRow.createCell(cellnum);
             cell.setCellValue(header.getName());
+
             //设置列的单元格格式
             if(ObjectUtils.isNotNull(header.getType())) {
                 if (CellType.STRING.equals(header.getType())) {
@@ -42,6 +44,7 @@ public class ExcelUtils {
                 sh.setDefaultColumnStyle(cellnum, style);
             }
 
+            cellnum++;
 
         }
 
