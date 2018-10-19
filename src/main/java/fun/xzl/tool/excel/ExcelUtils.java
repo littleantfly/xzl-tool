@@ -41,9 +41,6 @@ public class ExcelUtils {
                         style.setDataFormat(format.getFormat("@"));
                         break;
                 }
-
-                sh.setDefaultColumnStyle(cellnum, style);
-                style.setDataFormat(format.getFormat(""));
                 sh.setDefaultColumnStyle(cellnum, style);
             }
 
