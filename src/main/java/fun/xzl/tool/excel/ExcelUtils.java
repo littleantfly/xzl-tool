@@ -5,9 +5,8 @@ import fun.xzl.tool.excel.entity.ExcelHeader;
 import fun.xzl.tool.map.MapUtils;
 import fun.xzl.tool.object.ObjectUtils;
 import fun.xzl.tool.time.TimeUtils;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 
 import java.io.OutputStream;
@@ -24,12 +23,33 @@ public class ExcelUtils {
 
         Collections.sort(headers, Comparator.comparing(ExcelHeader::getSort));
 
+
+        // 设置为文本格式
+        CellStyle style = wb.createCellStyle();
+        DataFormat format = wb.createDataFormat();
+
+
         Row headerRow = sh.createRow(rownum++);
         cellnum = 0;
         for(ExcelHeader header: headers) {
             Cell cell = headerRow.createCell(cellnum++);
             cell.setCellValue(header.getName());
+            //设置列的单元格格式
+            if(ObjectUtils.isNotNull(header.getType())) {
+                switch (header.getType()) {
+                    case STRING:
+                        style.setDataFormat(format.getFormat("@"));
+                        break;
+                }
+
+                sh.setDefaultColumnStyle(cellnum, style);
+                style.setDataFormat(format.getFormat(""));
+                sh.setDefaultColumnStyle(cellnum, style);
+            }
+
+
         }
+
 
         if(CollectionUtils.isNotEmpty(data)) {
             for(Map<String, Object> map: data) {
