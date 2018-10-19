@@ -36,10 +36,8 @@ public class ExcelUtils {
             cell.setCellValue(header.getName());
             //设置列的单元格格式
             if(ObjectUtils.isNotNull(header.getType())) {
-                switch (header.getType()) {
-                    case STRING:
-                        style.setDataFormat(format.getFormat("@"));
-                        break;
+                if (CellType.STRING.equals(header.getType())) {
+                    style.setDataFormat(format.getFormat("@"));
                 }
                 sh.setDefaultColumnStyle(cellnum, style);
             }
