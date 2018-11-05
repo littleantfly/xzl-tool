@@ -21,6 +21,7 @@ public enum RespStatus {
 	LOGIN_PWD_ERROR("545", "登录密码错误"),
 	//业务处理异常
 	SERVER_ERROR("506", "业务处理失败"),
+	FEIGN_ERROR("508", "微服务调用失败"),
 	STATION_NOT_FOUND("507", "站点不存在")
 
 	;
